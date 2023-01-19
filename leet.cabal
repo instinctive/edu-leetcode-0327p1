@@ -1,0 +1,29 @@
+cabal-version: 3.0
+version: 1.0.0.0
+name: leet
+
+common shared
+  ghc-options: -O2
+  default-language: Haskell2010
+  ghc-options: -O2 +RTS -V0 -RTS
+  build-depends: base
+
+library
+  import: shared
+  hs-source-dirs: src
+  exposed-modules: CCAlg, Leet, Gen, Bench
+  build-depends:
+   , bytestring
+   , criterion
+   , directory
+   , random
+
+executable bench-exe
+  import: shared
+  hs-source-dirs: bench
+  main-is: Main.hs
+  ghc-options: -rtsopts
+  cxx-sources: cpp/ccalg.cpp
+  cxx-options: -O2
+  extra-libraries: stdc++
+  build-depends: leet
