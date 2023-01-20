@@ -18,6 +18,13 @@ library
    , directory
    , random
 
+executable hsalg-exe
+  import: shared
+  main-is: hsalg.hs
+  hs-source-dirs: app
+  ghc-options: -rtsopts
+  build-depends: leet
+
 executable bench-exe
   import: shared
   hs-source-dirs: bench
