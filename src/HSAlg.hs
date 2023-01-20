@@ -2,7 +2,7 @@
 -- https://github.com/codereport/LeetCode/tree/master/Problem%20327P1
 -- https://youtu.be/U6I-Kwj-AvY
 
-module Leet where
+module HSAlg ( hsBS ) where
 
 import Data.Char     ( isSpace )
 import Data.Function ( on      )
@@ -14,9 +14,9 @@ leet = uncurry (on max length)
     . span (<0)
     . filter (/=0)
 
-readIntsChar8 :: FilePath -> IO [Int]
-readIntsChar8 path =
-    unfoldr go <$> C.readFile path
+hsBS :: FilePath -> IO Int
+hsBS path =
+    leet . unfoldr go <$> C.readFile path
   where
     go s = do
         (n, s1) <- C.readInt s

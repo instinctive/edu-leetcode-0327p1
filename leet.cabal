@@ -11,7 +11,7 @@ common shared
 library
   import: shared
   hs-source-dirs: src
-  exposed-modules: CCAlg, Leet, Gen, Bench
+  exposed-modules: CCAlg, HSAlg, Gen, Bench
   build-depends:
    , bytestring
    , criterion
