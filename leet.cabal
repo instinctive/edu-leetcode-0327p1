@@ -20,15 +20,15 @@ library
 
 executable hsalg-exe
   import: shared
-  main-is: hsalg.hs
+  main-is: hsalg-exe.hs
   hs-source-dirs: app
   ghc-options: -rtsopts
   build-depends: leet
 
 executable bench-exe
   import: shared
+  main-is: bench-exe.hs
   hs-source-dirs: bench
-  main-is: Main.hs
   ghc-options: -rtsopts
   cxx-sources: cpp/ccalg.cpp
   cxx-options: -O2
