@@ -2,7 +2,8 @@
 #define CCALG_H
 
 extern "C" {
-int readAndCount(const char* path);
+int ext_eqrange(const char* path);
+int ext_obvious(const char* path);
 }
 
 #endif // CCALG_H
