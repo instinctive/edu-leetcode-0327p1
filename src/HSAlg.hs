@@ -1,7 +1,3 @@
--- https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/
--- https://github.com/codereport/LeetCode/tree/master/Problem%20327P1
--- https://youtu.be/U6I-Kwj-AvY
-
 module HSAlg ( hs_onepass, hs_twopass ) where
 
 import Data.Char     ( isSpace )
