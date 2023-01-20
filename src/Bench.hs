@@ -20,8 +20,10 @@ leetBench :: Int -> Benchmark
 leetBench n =
     envWithCleanup (setupEnv n) removeFile $ \p ->
         bgroup (commas n)
-            [ bench "haskell" $ nfIO (hsBS  p)
-            , bench "C++"     $ nfIO (cppER p)
+            [ bench "hs_onepass"  $ nfIO (hs_onepass  p)
+            , bench "hs_twopass"  $ nfIO (hs_twopass  p)
+            , bench "cpp_eqrange" $ nfIO (cpp_eqrange p)
+            , bench "cpp_obvious" $ nfIO (cpp_obvious p)
             ]
 
 commas :: Int -> String
