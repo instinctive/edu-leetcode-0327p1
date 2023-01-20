@@ -9,6 +9,9 @@
 
 typedef int func(std::vector<int>& nums);
 
+// Actual Algorithms
+// ----------------------------------------------------------------------
+
 int eqrange(std::vector<int>& nums) {
     auto [a, b] = std::equal_range(nums.begin(), nums.end(), 0);
     return std::max(
@@ -25,6 +28,9 @@ int obvious(std::vector<int>& nums) {
     for(; i<size && nums[i] == 0; ++i, ++zero);
     return std::max(negs, size - negs - zero);
 }
+
+// File Handling
+// ----------------------------------------------------------------------
 
 int doFile(func *f, const char* cpath) {
     std::string path(cpath);

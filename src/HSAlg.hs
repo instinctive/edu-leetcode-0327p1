@@ -5,6 +5,9 @@ import Data.Function ( on      )
 import Data.List     ( unfoldr )
 import qualified Data.ByteString.Char8 as C
 
+-- Actual Algorithms
+-- ----------------------------------------------------------------------
+
 onepass :: [Int] -> Int
 onepass = uncurry (on max length)
     . span (<0)
@@ -14,6 +17,9 @@ twopass :: [Int] -> Int
 twopass xx = on max length neg pos where
     neg = filter (<0) xx
     pos = filter (>0) xx
+
+-- File Handling
+-- ----------------------------------------------------------------------
 
 doFile :: ([Int] -> Int) -> FilePath -> IO Int
 doFile f path =
