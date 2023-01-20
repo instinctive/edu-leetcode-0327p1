@@ -1,4 +1,4 @@
-module Bench where
+module Bench ( leetMain ) where
 
 import Criterion.Main
 import Data.List
