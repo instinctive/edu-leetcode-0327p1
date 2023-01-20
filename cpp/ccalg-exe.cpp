@@ -3,8 +3,7 @@
 
 #include "ccalg.h"
 
-int main() {
-    const char* path = "nums.txt";
-    int x = readAndCount(path);
-    std::cout << x << std::endl;
+int main(int argc, char **argv) {
+    int x = readAndCount(argv[1]);
+    std::cout << argv[1] << ": " << x << std::endl;
 }
