@@ -22,13 +22,9 @@ twopass xx = on max length neg pos where
 -- ----------------------------------------------------------------------
 
 doFile :: ([Int] -> Int) -> FilePath -> IO Int
-doFile f path =
-    f . unfoldr go <$> C.readFile path
-  where
-    go s = do
-        (n, s1) <- C.readInt s
-        let s2 = C.dropWhile isSpace s1
-        return (n, s2)
+doFile f path = f . unfoldr go <$> C.readFile path where
+    go s = despace <$> C.readInt s
+    despace (n,s) = (n, C.dropWhile isSpace s)
 
 hs_onepass :: FilePath -> IO Int
 hs_onepass = doFile onepass
