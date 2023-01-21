@@ -20,7 +20,7 @@ int eqrange(std::vector<int>& nums) {
 }
 
 int obvious(std::vector<int>& nums) {
-    int size = nums.size();
+    const int size = nums.size();
     int negs = 0;
     int zero = 0;
     int i = 0;
